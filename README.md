@@ -9,16 +9,20 @@ Steps to execute the main.py which answers 3 questions asked
 
 Use your terminal 
 
-1) create container - docker build -t standalone-spark3:3.0.2 .
-2) Run the container - docker-compose up
-3) in an another terminal
-  a. to check if spark master and worker is up and running - docker ps
-  b. grab the container id of master
-  c. docker exec -it <CONTAINER ID>  bash
+ create container -
+-     docker build -t standalone-spark3:3.0.2 .
+ Run the container -
+-     docker-compose up
+ In an another terminal
+ to check if spark master and worker is up and running -
+-     docker ps
+grab the container id of master
+-     docker exec -it <CONTAINER ID>  bash
   d. Go to /opt/spark/bi
-   e. execute spark submit command - ./spark-submit --master spark://spark-master:7077 --driver-memory 1G --executor-memory 1G /opt/spark-apps/main.py
+-     execute spark submit command - ./spark-submit --master spark://spark-master:7077 --driver-memory 1G --executor-memory 1G /opt/spark-apps/main.py
 
-To stop spark master and single/only container: docker stop $(docker ps -a -q)
+To stop spark master and single/only container: 
+-     docker stop $(docker ps -a -q)
 
 
 
